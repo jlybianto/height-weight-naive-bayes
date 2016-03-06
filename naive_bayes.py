@@ -3,7 +3,9 @@
 # ----------------
 
 # The pandas package is used to fetch and store data in a DataFrame.
+# The matplotlib package is for graphical outputs (eg. box-plot, histogram, QQ-plot).
 import pandas as pd
+import matplotlib.pyplot as plt
 
 # ----------------
 # OBTAIN DATA
@@ -26,3 +28,15 @@ observations = len(data)
 num_col = len(data.columns)
 print("Number of Observations: " + str(observations))
 print("Number of Columns: " + str(num_col))
+
+# ----------------
+# VISUALIZE DATA
+# ----------------
+plt.hist(data["actual"], bins=30, alpha=0.5, label="Actual")
+plt.hist(data["ideal"], bins=30, alpha=0.5, label="Ideal")
+plt.gca().grid(True)
+plt.xlabel("Mass (lbs)", fontsize=14)
+plt.ylabel("Count", fontsize=14)
+plt.title("Histogram of Ideal and Actual Weight of Participants", fontsize=16)
+plt.legend(loc="upper right")
+plt.show()
