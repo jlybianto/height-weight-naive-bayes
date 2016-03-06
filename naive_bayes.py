@@ -14,3 +14,15 @@ import pandas as pd
 # ----------------
 # PROFILE DATA
 # ----------------
+
+# Determine number of observations or data points in the data set.
+data = pd.read_csv("ideal_weight.csv")
+col = [i.replace("'", "") for i in data.columns]
+data.columns = col
+col_gender = [i.replace("'", "") for i in data["sex"]]
+data["sex"] = col_gender
+
+observations = len(data)
+num_col = len(data.columns)
+print("Number of Observations: " + str(observations))
+print("Number of Columns: " + str(num_col))
