@@ -36,6 +36,7 @@ print("")
 # ----------------
 
 # Histogram of raw data in terms of ideal and actual weight
+plt.figure()
 plt.hist(data["actual"], bins=30, alpha=0.5, label="Actual")
 plt.hist(data["ideal"], bins=30, alpha=0.5, label="Ideal")
 plt.gca().grid(True)
@@ -46,6 +47,7 @@ plt.legend(loc="upper right")
 plt.savefig("hist-weights.png")
 
 # Histogram of processed data in terms of difference between ideal and actual weight.
+plt.figure()
 plt.hist(data["diff"], bins=30, alpha=0.5, label="Actual - Ideal")
 plt.gca().grid(True)
 plt.xlabel("Mass (lbs)", fontsize=14)
