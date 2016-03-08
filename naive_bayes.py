@@ -4,6 +4,7 @@
 
 # The pandas package is used to fetch and store data in a DataFrame.
 # The matplotlib package is for graphical outputs (eg. box-plot, histogram, QQ-plot).
+# GaussianNB implements the Gaussian Naive Bayes algorithm for classification. The likelihood of the features is assumed to be Gaussian.
 import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.naive_bayes import GaussianNB
@@ -106,6 +107,8 @@ print("")
 # ----------------
 # USER INPUT
 # ----------------
+
+# Allow user to input arbitrary ideal and actual masses for the model to make a prediction.
 mass_act = int(raw_input("Please insert your actual mass in pounds: "))
 mass_ide = int(raw_input("Please insert your ideal mass in pounds: "))
 mass_diff = mass_act - mass_ide
